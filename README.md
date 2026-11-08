@@ -19,3 +19,4 @@ This project is a web-based Event Management System developed using Laravel.
 - CSS
 - JavaScript
 - Bootstrap
+frist project
