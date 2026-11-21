@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role',
         'password',
     ];
 
@@ -46,4 +48,32 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+public function vendorProfile()
+{
+    
+    return $this->hasOne(VendorProfile::class);
+}
+
+
+public function vendorServices()
+{
+    return $this->hasMany(VendorService::class, 'vendor_id');
+}
+public function vendorPackages()
+{
+    return $this->hasMany(VendorPackage::class, 'vendor_id');
+}
+// Customer ki bookings
+public function customerBookings(): HasMany
+{
+    return $this->hasMany(Booking::class, 'customer_id');
+}
+
+// Vendor ki booking requests
+public function vendorBookings(): HasMany
+{
+    return $this->hasMany(Booking::class, 'vendor_id');
+}
+
 }
