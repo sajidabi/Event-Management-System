@@ -7,6 +7,7 @@ use App\Http\Controllers\VendorProfileController;
 use App\Http\Controllers\VendorServiceController;
 use App\Http\Controllers\VendorPackageController;
 use App\Http\Controllers\VendorBookingController;
+use App\Http\Controllers\AdminDashboardController;
 
 // Homepage
 Route::get('/', function () {
@@ -27,9 +28,7 @@ Route::get('/dashboard', function () {
 
 // Admin Dashboard
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 });
 
 // Vendor Dashboard

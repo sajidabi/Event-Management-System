@@ -18,22 +18,22 @@
 ">
 
     <div style="background:#f0ebff; padding:25px; border-radius:10px;">
-        <h3 style="color:#7655d9;">0</h3>
+        <h3 style="color:#7655d9;">{{ $totalUsers }}</h3>
         <p>Total Users</p>
     </div>
 
     <div style="background:#e8f5ff; padding:25px; border-radius:10px;">
-        <h3 style="color:#1684c7;">0</h3>
+        <h3 style="color:#1684c7;">{{ $totalVendors }}</h3>
         <p>Total Vendors</p>
     </div>
 
     <div style="background:#e8f8ee; padding:25px; border-radius:10px;">
-        <h3 style="color:#269653;">0</h3>
+        <h3 style="color:#269653;">{{ $totalServices }}</h3>
         <p>Total Services</p>
     </div>
 
     <div style="background:#fff0e8; padding:25px; border-radius:10px;">
-        <h3 style="color:#e07835;">0</h3>
+        <h3 style="color:#e07835;">{{ $totalBookings }}</h3>
         <p>Total Bookings</p>
     </div>
 
